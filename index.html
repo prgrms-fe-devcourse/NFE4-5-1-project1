@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noteflow</title>
+    
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/calendar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
+
+   
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <div class="left_menu">
+                <div class="oooh-baby-regular" id="logo_name"><a href="/">Noteflow</a></div>
+                <button class="menu-toggle">«</button>
+            </div>
+            <div class="right_menu">
+                <div class="tab-bar" id="tabTitle">페이지명</div>
+                <input class="search" type="text" id="searchInput" placeholder="검색">
+                <!-- <button id="searchButton">검색</button> -->
+                <!-- 검색 결과 모달 -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>검색 결과</h2>
+                        <ul id="searchResults"></ul> <!-- 검색 결과 리스트 -->
+                    </div>
+                </div>
+            </div>
+
+        </header>   
+        
+        <aside id="sidebar" class="sidebar">
+
+            <ul class="sideMenu_documents">
+                <li><a href="/dashboard">📋 대시보드</a></li>
+
+                <li>
+                    <div class="gnb_document">
+                        <a id="150196" href="/page">📜 문서</a>
+                        <button type="button" id="pageCreateButton">+</button>
+                    </div>
+
+                    <ul id="notionList"> 
+                        <!-- <li><a href=""></a></li> -->
+                    </ul>
+                </li>
+
+                <li><a href="/folder">🗂️ 폴더</a></li>
+                <li><a href="/bookmark">⭐ 즐겨찾기</a></li>
+            </ul>
+
+            <ul class="sideMenu_settings">
+                <li>
+                    <div class="gnb_darkMode">
+                        <a href="">🌑 다크모드</a>
+                        <div class="switch-wrapper">
+                            <input type="checkbox" id="switch">
+                            <label for="switch" class="switch_label">
+                              <span class="onf_btn"></span>
+                            </label>
+                          </div>
+                    </div>
+                </li>
+
+            </ul>
+        </aside>
+
+        <main>
+            <div class="content">
+                <h2>안녕하세요.</br></h2>
+                <h2>7팀의 <span class="oooh-baby-regular"> Noteflow</span> 입니다.</h2>
+              </div>
+
+            <div class="calendar">
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prevBtn">◀️</button>
+                        <h2 id="currentMonth"></h2>
+                        <button id="nextBtn">▶️</button>
+                    </div>
+                    <div class="calendar-days">
+                        <div class="day">일</div>
+                        <div class="day">월</div>
+                        <div class="day">화</div>
+                        <div class="day">수</div>
+                        <div class="day">목</div>
+                        <div class="day">금</div>
+                        <div class="day">토</div>
+                    </div>
+                    <div class="calendar-dates" id="calendarDates"></div>
+                </div>
+            </div>
+
+            <div id="popup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <span id="close-popup">×</span>
+                    <p id="selected-date"></p>
+                    <input id="calendar-title" type="text" placeholder="제목" />
+                    <textarea id="calendar-content" placeholder="내용"></textarea>
+                    <div id="button-group">
+                        <button id="insert-btn">저장</button>
+                        <button id="update-btn">수정</button>
+                        <button id="delete-btn">삭제</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <img class="footerImg" src="images/team7.png" alt="team7">
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="documents.js"></script>
+    <script type="module" src="./js/router.js"></script>
+    <script type="module" src="./js/calendar.js"></script> 
+    <script src="./js/write/write.js"></script>
+</body>
+</html>
