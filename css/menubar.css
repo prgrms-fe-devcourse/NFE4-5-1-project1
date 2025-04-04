@@ -1,0 +1,280 @@
+.menubar {
+  width: 300px;
+  height: 100vh;
+  background-color: #e2e8e0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.menubar-logo {
+  opacity: 0.3;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 페이지 추가하기, 검색 버튼 */
+.menubar-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.add-page-btn {
+  width: 200px;
+  height: 60px;
+  background-color: #bdd1be;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 70px;
+}
+
+.add-page-btn img {
+  width: 25px;
+  height: 25px;
+}
+
+.search-page-form {
+  position: relative;
+  width: 200px;
+  height: 60px;
+}
+
+.search-page-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  font-size: 10px;
+  background-color: #bdd1be;
+  font-size: 12px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.search-page-form img {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.search-page-form:has(input:focus) img {
+  display: none;
+}
+
+.workspace {
+  color: rgb(157, 157, 157);
+  font-weight: 500;
+  margin-left: 10px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.document-list-container {
+  overflow-y: auto;
+  margin-bottom: 120px;
+}
+
+.document-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+  opacity: 0.8;
+}
+
+.document-list a {
+  text-decoration: none;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.document-item {
+  text-decoration-line: none;
+  padding-bottom: 3px;
+  position: relative;
+  font-size: 14px;
+  position: relative;
+}
+
+.document-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 5px;
+  height: 25px;
+  color: rgb(44, 44, 44);
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #4c4a4a;
+}
+
+.document-item a:hover {
+  background-color: #d9dcd7;
+}
+
+.show-sublist-btn {
+  position: absolute;
+  position: absolute;
+  left: 0;
+  background-image: url('../assets/images/chevron-right-icon.png');
+  width: 25px;
+  height: 25px;
+  color: transparent;
+  background-size: cover;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.document-sub-list {
+  display: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.moreBtn {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+}
+
+.document-item:hover .moreBtn {
+  display: block;
+}
+
+.morebox {
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  position: fixed;
+  left: 200px;
+  border: 1px solid gray;
+  display: none;
+  gap: 10px;
+  flex-direction: column;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+/* 메뉴바 프로필 */
+.menubar-profile {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  border-top-right-radius: 15px;
+  background-color: #2c4a35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.menubar-profile span {
+  font-size: 13px;
+}
+
+.profile-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img-background {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: gray;
+}
+
+.profile-layout img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 휴지통 */
+.menubar-trashbin {
+  position: absolute;
+  right: 10px;
+  bottom: 80px;
+  font-size: 12px;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.trashbin-icon {
+  border: none;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.trashbin-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+/*휴지통 css trash-list 추가*/
+.trash-modal::backdrop {
+  background: rgba(255, 255, 255, 0);
+  color: none;
+}
+
+.trash-modal:modal {
+  position: fixed;
+  width: 180px;
+  max-height: 176px;
+  bottom: 0;
+  right: 0;
+  left: 230px;
+  top: 530px;
+  border: 1px solid #d7dcd5;
+  border-radius: 4px;
+  margin: 0;
+  outline: none;
+  overflow: auto;
+}
+
+.trash-list {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.trash-list li {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

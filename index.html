@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- 전체 -->
+    <div class="layout">
+      <!-- 좌측 메뉴바 -->
+      <aside class="menubar">
+        <div class="menubar-logo">
+          <span class="menubar-logo-text">WorkClover</span>
+        </div>
+
+        <!-- 메뉴바에 있는 페이지 추가와 검색 버튼 -->
+        <div class="menubar-controls">
+          <div class="menubar-add">
+            <button class="add-page-btn">
+              <img
+                src="./assets/images/add-icon-black.png"
+                alt="페이지 추가하기 사진"
+              />페이지 추가
+            </button>
+          </div>
+
+          <form class="search-page-form">
+            <img
+              src="./assets/images/search-icon.png"
+              alt="페이지 검색하기 사진"
+            />
+            <input
+              type="text"
+              class="search-page-input"
+              placeholder="페이지 검색"
+            />
+          </form>
+        </div>
+
+        <span class="workspace">Work Space</span>
+        <div class="document-list-container">
+          <ul class="document-list"></ul>
+        </div>
+        <div class="menubar-trashbin">
+          <div class="trashbin-icon">
+            <img src="./assets/images/delete-icon.png" alt="휴지통" />
+          </div>
+          <span>휴지통</span>
+        </div>
+        <dialog class="trash-modal"><ul class="trash-list"></ul></dialog>
+        <!-- 프로필 -->
+        <div class="menubar-profile">
+          <div class="profile-layout">
+            <span class="profile-img-background">
+              <img src="./assets/images/profile-icon.png" alt="프로필 사진" />
+            </span>
+            <span>홍길동</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- 가운데 문서 영역 -->
+      <main class="document">
+        <div class="welcome-document">
+          <h1>
+            작은 행운들이 쌓이는 당신만의 워크스페이스.<br /><span
+              class="welcome-document-workclover"
+              >WorkClover</span
+            >에 오신 것을 환영합니다!
+          </h1>
+          <p>지금 바로 당신의 아이디어를 정리해 보세요.</p>
+        </div>
+
+        <button class="new-document">문서 만들기</button>
+      </main>
+
+      <aside class="todolist-container">
+        <div class="todolist">
+          <button class="todolist-right-btn">
+            <img
+              src="./assets/images/arrow-right.png"
+              alt="오른쪽 화살표 아이콘"
+              class="todolist-right-icon"
+            />
+            <span class="badge" id="todolist-count"></span>
+          </button>
+
+          <div class="todolist-menu">
+            <div class="todolist-top">
+              <span class="todolist-top-title">Todo List</span>
+
+              <button class="todolist-add-btn">
+                <img
+                  src="./assets/images/add-icon.png"
+                  alt="추가하기 아이콘"
+                  class="todolist-add-icon"
+                />
+              </button>
+            </div>
+
+            <!-- 입력창과 할 일 생성 -->
+            <div class="todolist-box">
+              <!-- 아이콘 + 할 일 텍스트 -->
+              <div class="todolist-content">
+                <label class="checkbox-todolist">
+                  <input type="checkbox" class="todolist-icon" />
+                  <span class="todolist-circle-icon"></span>
+                </label>
+
+                <form class="todolist-input-box">
+                  <input type="text" class="todolist-input" />
+                </form>
+              </div>
+
+              <ul class="todolist-list"></ul>
+
+              <!-- 삭제 버튼 -->
+              <button class="todolist-delete-btn">x</button>
+            </div>
+
+            <!-- 하단, 메모장 -->
+            <div class="memo">
+              <div class="memo-title-box">
+                <span class="memo-title">memo</span>
+              </div>
+
+              <!-- 메모장에 텍스트 입력 -->
+              <textarea
+                name="메모장"
+                id="memo-text-box"
+                maxlength="1000"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- 스크립트 연결 -->
+      <script type="module" src="./js/trashcan.js"></script>
+      <script type="module" src="./apis/getDocuments.js"></script>
+      <script src="./js/pageManager.js" type="module"></script>
+      <script type="module" src="./js/renderFilteredDocuments.js"></script>
+      <script type="module" src="./js/documentSearch.js"></script>
+      <script type="module" src="./js/todo.js"></script>
+      <script src="./js/memo.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+.document {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.welcome-document {
+  margin-top: 200px;
+  margin-left: 100px;
+}
+
+.welcome-document h1 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  line-height: 40px;
+}
+
+.welcome-document-workclover {
+  color: #008000;
+}
+
+.welcome-document p {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.new-document {
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #dcdcdc;
+  font-size: 15px;
+  margin-left: 100px;
+}
+
+.document-title {
+  font-size: 50px;
+  margin-top: 200px;
+  padding-left: 150px;
+  width: 900px;
+  font-weight: 700;
+}
+
+.document-title:focus,
+.document-content:focus {
+  outline: none;
+}
+
+.document-title:empty:before {
+  color: #aaa;
+  content: "새 페이지";
+  pointer-events: none;
+}
+
+.document-content {
+  padding-top: 40px;
+  padding-left: 150px;
+  width: 900px;
+  height: 100%;
+  line-height: 1.4;
+}
+
+.document-content:empty:before {
+  color: #aaa;
+  content: "내용을 입력해주세요";
+  pointer-events: none;
+}
+
+.sub-document-link-list {
+  display: flex;
+  margin-bottom: 10px;
+  justify-self: center;
+  margin-left: 150px;
+}
+.sub-document-link-item {
+  border-right: 1px solid #d6d6d6;
+}
+.sub-document-link-item:last-child {
+  border-right: none;
+}
+.sub-document-link-item a {
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 7px 30px;
+  display: block;
+  color: #666;
+}
+.sub-document-link-item a:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+}

@@ -1,0 +1,5 @@
+/* 페이지 전체 */
+.layout {
+  display: flex;
+  height: 100vh;
+}
