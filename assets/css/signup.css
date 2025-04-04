@@ -1,0 +1,233 @@
+@import url('../css/root.css');
+* {
+  transition: background-color 0.3s, color 0.3s;
+}
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+.headerIconBox {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+/* 라이트 다크 모드 토글 */
+.invisible {
+  display: none;
+}
+.modeToggle {
+  display: flex;
+  align-items: center;
+  /* position: absolute;
+  right: 70px;
+  top: 10px; */
+}
+/* 토글 바 */
+.modeToggleBar {
+  color: var(--toggleBar-color);
+  width: 90px;
+  height: 40px;
+}
+/* 토글 원 */
+#toggleCircle {
+  display: flex;
+  width: 50px;
+  position: absolute;
+  left: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.toggleCircle:hover {
+  transform: scale(1.05);
+}
+.toggleCircle:active {
+  transition: 0.1s all ease;
+  opacity: 0.8;
+}
+.modeCircle {
+  color: var(--color-blue);
+  width: 30px;
+}
+/* 해 달 */
+.mode {
+  transition: all 0.3s ease;
+}
+.mode {
+  color: var(--white);
+  position: absolute;
+  left: 11%;
+  top: 20%;
+}
+.moon {
+  width: 18px;
+  color: black;
+}
+.container {
+  background: var(--bg-color);
+  padding: 60px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: var(--box-shadow);
+  width: 500px;
+  color: var(--text-color);
+}
+
+h2 {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hr1 {
+  display: block;
+  border-color: var(--text-color);
+  margin-top: 50px;
+}
+.inputInfo {
+  font-weight: 600;
+  padding: 10px 0;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+}
+p {
+  font-size: 14px;
+  margin: 15px auto 15px 0;
+}
+.headerLogo {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+}
+label {
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
+  margin-top: 30px;
+}
+label span {
+  color: var(--error);
+}
+input {
+  width: 60%;
+  padding: 12px;
+  padding-right: 030;
+  margin-top: 5px;
+  border: 1px solid var(--darkGray);
+  border-radius: 5px;
+  font-size: 10px;
+}
+.id-group {
+  align-items: center;
+}
+.id-group input {
+  flex: 1;
+}
+.check-btn {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: 1px solid var(--darkGray);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+  background-color: var(--white);
+  font-weight: bold;
+  float: auto;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-cancel {
+  background-color: var(--white);
+  border: 2px solid var(--darkGray);
+}
+.btn-submit {
+  background-color: var(--blue1);
+  color: #fff;
+  margin-left: 20px;
+}
+
+.logo {
+  margin-top: 15px;
+  width: 20px;
+  height: 20px;
+}
+.emailLogo {
+  box-shadow: var(--box-shadow);
+}
+.email-group input {
+  flex: 1;
+}
+input::placeholder {
+  position: absolute;
+  transition: all 0.3s ease-out;
+}
+
+input:focus::placeholder {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+/* 공통 버튼 스타일 */
+[class*='btn'] {
+  transition: all 0.1s ease-in-out;
+}
+
+/* 🔵 마우스 호버 시 (버튼이 살짝 커지고, 그림자 효과 추가) */
+[class*='btn']:hover {
+  transform: scale(1.02);
+}
+
+/* 🔘 클릭 시 (버튼이 작아지면서 눌리는 느낌) */
+[class*='btn']:active {
+  transform: scale(0.95);
+}
+.fail {
+  background-image: url(../images/close_24dp_EA3323_FILL0_wght400_GRAD0_opsz24.svg);
+}
+.pass {
+  background-image: url(../images/check_24dp_75FB4C_FILL0_wght400_GRAD0_opsz24.svg);
+}
+.fail,
+.pass {
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.error-message {
+  color: var(--error);
+  font-size: 10px;
+  opacity: 1;
+  display: block;
+  margin-top: 4px;
+}
+
+/* 이메일 에러 메시지를 아래쪽 정렬 */
+.email-group {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.email-group .error-message {
+  width: 100%;
+  margin-top: 5px;
+}
+.id-check-message {
+  font-size: 10px;
+}
