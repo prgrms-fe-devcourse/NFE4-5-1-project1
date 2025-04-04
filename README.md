@@ -15,8 +15,7 @@
 | 역할                       | 종류                                                                                                                                                                                                                                                                                                                    |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`Programming Language`** | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) |                                                                                                                                                                                              |                         |
-| **`Data Fetching`**        | ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white)                                                                                              |
-| **`Formatting`**           | ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white) ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white)  |
+| **`Data Fetching`**        | ![Fetch API](https://img.shields.io/badge/Fetch%20API-43853D?style=for-the-badge&logo=JavaScript&logoColor=white)                                                                                              |
 | **`Version Control`**      | ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)                                                                                                        |
 
 <br />
@@ -30,14 +29,9 @@
 main(master)
 `main` 브랜치는 배포 가능한 상태만을 관리해요.
 
-# develop
-`develop` 브랜치는 통합 브랜치 역할을 하며, 평소에는 해당 브랜치를 기반으로 개발을 진행해요.
-모든 기능이 정상적으로 동작할 수 있는 안정적인 상태를 유지하고,
-배포가 가능한 상태라면 `main`브랜치에 `merge` 해요.
-
 # 피쳐 브랜치(Feature branch)
-develop 브랜치에서 분기
-develop 브랜치로 merge
+`main` 브랜치에서 분기
+`main` 브랜치로 merge
 ```
 
 ### Commit Convention
@@ -50,6 +44,9 @@ develop 브랜치로 merge
 | `chore`    | 📦      | 패키지 매니저, 설정 세팅                     |
 | `init`     | 🌱      | 초기 세팅 및 종속성 추가 관련                |
 | `docs`     | 📝      | 문서 수정                                    |
+| `pencil`   | ✏️      | 오탈자 또는 문구, 변수명 수정                     |
+| `zap`      | ⚡️      | 기능 개선 및 변경                |
+| `poop`     | 💩      | 코드 또는 파일 삭제                                  |
 | `design`   | 🎨      | CSS 및 UI 변경                               |
 | `style`    | 💄      | 코드 포맷팅, 세미콜론 누락 등 코드 변경 없음 |
 | `test`     | ✅      | 테스트 코드, 리팩토링 테스트 코드 추가       |
@@ -71,39 +68,42 @@ develop 브랜치로 merge
 ```
 📂 DocMate
 ├── 📂 assets
-│   ├── 📂 css
-│   │   ├── 📜 reset.css      # 기본 리셋 스타일
-│   │   ├── 📜 style.css      # 전체 스타일
-│   │   └── 📜 theme.css      # 다크/라이트 모드 스타일
+│   ├── 📂 css        
+│   │   ├── 📜 DocMate.css     
+│   │   ├── 📜 calendar.css      
+│   │   ├── 📜 codeshare.css
+│   │   ├── 📜 document.css          
+│   │   ├── 📜 kanbanBoard.css   
+│   │   ├── 📜 login.css
+│   │   ├── 📜 reset.css         
+│   │   ├── 📜 root.css          
+│   │      
 │   ├── 📂 js
-│   │   ├── 📜 app.js         # 메인 애플리케이션 로직
-│   │   ├── 📜 router.js      # 라우팅 처리
-│   │   ├── 📜 view.js        # UI 업데이트 및 렌더링
-│   │   ├── 📜 api.js         # API 호출
-│   │   └── 📜 utils.js       # 유틸리티 함수
-│   └── 📂 images           # 이미지 파일
-│       ├── 🖼️ logo.png
-│       ├── 🖼️ background.jpg
-│       └── 📂 icons
-├── 📂 components       # 재사용 가능한 HTML 조각
-│   ├── 📜 button.html
-│   ├── 📜 input.html
-│   └── ...
-├── 📂 views            # 페이지별 HTML 템플릿 (라우팅 대상)
-│   ├── 📜 home.html       # 메인 페이지
-│   ├── 📜 dashboard.html
-│   ├── 📜 settings.html
-│   └── 📜 about.html
-├── 📜 index.html         # 메인 페이지 (SPA 진입점)
-└── 📜 README.md          # 프로젝트 설명 파일
+│   │   ├── 📜 DocMate.js     
+│   │   ├── 📜 beforeLogin.js    
+│   │   ├── 📜 calendar.js        
+│   │   ├── 📜 common.js        
+│   │   ├── 📜 db.js             
+│   │   ├── 📜 document.js         
+│   │   ├── 📜 kanbanBoard.js    
+│   │   ├── 📜 login.js           
+│   │   ├── 📜 newprojectModal.js 
+│   │   ├── 📜 pageMove.js         
+│   │   ├── 📜 password-signup.js   
+│   │   ├── 📜 validation.js       
+│   └── 📂 images
+│       ├── 🖼️ logo.png           
+│       ├── 🖼️ down_arrow.png
+│       └── ...
+├── 📜 DocMate.html
+├── 📜 beforeLogin.html                               
+├── 📜 calendar.html
+├── 📜 document.html            
+├── 📜 kanbanBoard.html       
+├── 📜 login.html            
+└── 📜 signup.html             
+└── 📜 README.md                 
 
 
 ```
-
-##  🚶🚶‍♀️ Team Members
-| [김은지](https://github.com/keemeunji) | [()](https://github.com/) |
-| :--------: | :--------: |
-| <img src="https://github.com/keemeunji.png" width="200px"/> | <img src="https://github.com/.png" width="200px"/> |
-| 칸반보드 담당 | 문서 담당 |
-
 <br />
